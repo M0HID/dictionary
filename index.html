@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css" rel="stylesheet"> <!-- Include Tailwind CSS via CDN -->
+</head>
+<body>
+    <div class="container mx-auto px-4 pt-12">
+        <div class="w-full max-w-md mx-auto mt-4">
+            <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="word">
+                        Enter a word
+                    </label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="word" type="text" placeholder="Word">
+                </div>
+                <div class="flex items-center justify-between">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" id="goButton">
+                        Go
+                    </button>
+                </div>
+            </div>
+            <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" id="resultBox">
+                <!-- API result will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("goButton").addEventListener("click", function() {
+            var word = document.getElementById("word").value;
+            var resultBox = document.getElementById("resultBox");
+            resultBox.innerHTML = "Loading...";
+            fetch("https://ikigai.ftp.sh/meow_api/dict/" + word)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        resultBox.innerHTML = data.error;
+                    } else {
+                        resultBox.innerHTML = "<h1 class='text-3xl font-bold'>" + data.word + "</h1><p class='text-xl'>" + data.definition + "</p>";
+                    }
+                });
+        });
+    </script>
+</body>
+</html>
