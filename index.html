@@ -38,7 +38,23 @@
                     if (data.error) {
                         resultBox.innerHTML = data.error;
                     } else {
-                        resultBox.innerHTML = "<h1 class='text-3xl font-bold'>" + data.word + "</h1><p class='text-xl'>" + data.definition + "</p>";
+                        resultBox.innerHTML = `
+                            <h1 class='text-3xl first-letter:capitalize'>
+                                <span class="text-blue-500 font-bold">
+                                ${data.word}
+                                </span>
+                                <span class='text-sm'>
+                                ${data.word_type}
+                                </span>
+                            </h1>
+                            <p class='text-lg'>
+                                ${data.definition}
+                            </p>
+                            <p class='mt-4'>
+                                ${data.example_sentence}
+                            </p>
+                            `;
+
                     }
                 });
         });
