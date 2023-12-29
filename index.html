@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
 	<style>
-/*
+    /*
 ! tailwindcss v3.4.0 | MIT License | https://tailwindcss.com
 */
 
@@ -714,6 +714,7 @@ video {
   outline-offset: 2px
 }
 
+
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -739,7 +740,7 @@ video {
                     </button>
                 </div>
             </div>
-            <div class="bg-zinc-700 drop-shadow-2xl rounded px-8 pt-6 pb-8 mb-4" id="resultBox">
+            <div class="text-zinc-300 bg-zinc-700 drop-shadow-2xl rounded px-8 pt-6 pb-8 mb-4" id="resultBox">
                 <!-- API result will be displayed here -->
             </div>
         </div>
@@ -761,14 +762,14 @@ video {
                                 <span class="text-blue-500 font-bold">
                                 ${data.word}
                                 </span>
-                                <span class='text-sm'>
+                                <span class='text-zinc-300 text-sm'>
                                 ${data.word_type}
                                 </span>
                             </h1>
-                            <p class='text-lg'>
+                            <p class='text-zinc-300 text-lg'>
                                 ${data.definition}
                             </p>
-                            <p class='mt-4'>
+                            <p class='text-zinc-300 mt-4'>
                                 ${data.example_sentence}
                             </p>
                             `;
