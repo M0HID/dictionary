@@ -760,7 +760,7 @@ video {
             var word = document.getElementById("word").value;
             var resultBox = document.getElementById("resultBox");
             resultBox.innerHTML = "Loading...";
-            fetch("https://cityfibre.tplinkdns.com:7860/dict/" + word)
+            fetch("https://ikigai.ftp.sh/meow_api/dict/" + word)
                 .then(response => response.json())
                 .then(data => {
                     if (data.error) {
