@@ -1,5 +1,6 @@
 <html lang="en">
 <head>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap">
 	<style>
     /*
 ! tailwindcss v3.4.0 | MIT License | https://tailwindcss.com
@@ -11,6 +12,21 @@
 */
 
 *,
+html,
+        :host {
+          /* ... existing styles ... */
+          font-family: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+          /* ... existing styles ... */
+        }
+
+        code,
+        kbd,
+        samp,
+        pre {
+          font-family: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+          /* ... existing styles ... */
+        }
+
 ::before,
 ::after {
   box-sizing: border-box;
